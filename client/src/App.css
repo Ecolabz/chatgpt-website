@@ -105,3 +105,65 @@ body{
   background-color: #FF0000;
   color:white;
 }
+
+
+/*  */
+div.c{
+  position: relative;
+  margin:1rem;
+  width: 400px;
+}
+input[type="checkbox"]{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity:0;
+  visibility: 0;
+}
+h1{
+  background:#10163A;
+  color:white;
+  padding:0.5rem;
+  position: relative;
+  font-size: 16px;
+}
+label::before{
+  content:"";
+  display: inline-block;
+  border: 5px solid transparent;
+  border-left:10px solid white;
+}
+label{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+div.p{
+  display: none;
+  font-size: 14px;
+  margin-top:8px;
+  max-height:0px;
+  overflow: hidden;
+  transition:max-height 0.5s;
+  background-color: white;
+  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+div.p p {
+  padding:0.5rem;
+}
+input:checked ~ h1 label::before{
+  border-left:5px solid transparent;
+  border-top:10px solid white;
+  margin-top:12px;
+  margin-right:10px;
+}
+input:checked ~ h1 ~ div.p{
+  display:block;
+  max-height:100px;
+}
+a{
+  color:steelblue;
+}
