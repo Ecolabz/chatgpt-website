@@ -3,7 +3,7 @@ import "./App.css";
 import { useRef } from "react";
 import axios from "axios";
 
-var ans="ss"
+var ans=""
 function App() {
   const inputSubjectRef = useRef();
   const inputDescriptionRef = useRef();
@@ -60,24 +60,29 @@ function App() {
           type="text"
           ref={inputSubjectRef}
           class="form-control col"
-          placeholder="Type Something"
+          placeholder="Email Subject"
         />
 
         <input
           type="text"
           ref={inputDescriptionRef}
           class="form-control col"
-          placeholder="Type Something"
+          placeholder="Email Description"
         />
 
         <button disabled={loading} class="btn" onClick={handleSend}>
         {/* <button class="btn" onClick={handleSend}> */}
-          Send
+          Generate
         </button>
       </div>
 
 <div>
-  {ans}
+<pre>
+              <textarea columns="50" rows="20">
+              {ans}
+              </textarea>
+            </pre>
+
 </div>
       {/* <div>
         {qna.map((qna) => {
