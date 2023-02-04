@@ -23,11 +23,13 @@ app.get('/', async (req, res) => {
 
 app.post('/chat', async (req, res) => {
   try {
-    const question = req.body.question;
+
+    const subject = req.body.subject;
+    const description = req.body.description;
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `${question}`,
+      prompt: `Please create an email having subject ${subject} and description ${description}`,
       temperature: 0, // Higher values means the model will take more risks.
       max_tokens: 3000, // The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
       top_p: 1, // alternative to sampling with temperature, called nucleus sampling
@@ -37,7 +39,7 @@ app.post('/chat', async (req, res) => {
 
     res.status(200).send({
       answer: response.data.choices[0].text,
-      question:question
+      // question:question
     });
 
   } catch (error) {
