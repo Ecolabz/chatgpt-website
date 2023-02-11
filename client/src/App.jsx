@@ -23,9 +23,9 @@ function App() {
         description,
       })
       .then((response) => {
-        ans = response.data.answer;
-        console.log(ans);
-        document.getElementById("myTextarea").value = ans;
+        // ans = response.data.answer;
+        // console.log(ans);
+        document.getElementById("myTextarea").value = response.data.answer;
       })
       .finally(() => {
         setLoading(false);
