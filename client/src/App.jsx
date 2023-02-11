@@ -15,6 +15,16 @@ function App() {
     const description = inputDescriptionRef.current.value;
     setLoading(true);
 
+    if(subject==""){
+      alert("Please input subject")
+      setLoading(false);
+    }
+
+    if(description==""){
+      alert("Please input description")
+      setLoading(false);
+    }
+
     
     if(subject!="" && description!=""){
     axios
