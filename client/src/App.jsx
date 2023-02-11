@@ -18,7 +18,7 @@ function App() {
     
     if(subject!="" && description!=""){
     axios
-      .post("http://localhost:3000/chat", {
+      .post("https://chatgpt-server-t3fk.onrender.com/chat", {
         subject,
         description,
       })
